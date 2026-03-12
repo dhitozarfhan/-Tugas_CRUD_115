@@ -51,6 +51,12 @@ Aplikasi ini menyediakan REST API di endpoint root `/api/ktp`:
 *(Silakan tambahkan file screenshot tampilan antarmuka web ke folder repository dan letakkan link path-nya di sini)*
 - ![Screenshot Halaman Awal]() 
 
+## Struktur Proyek
+- `src/main/java`: Backend code (Spring Boot Controller, Service, Repository, Entity).
+- `src/main/resources/static`: Frontend code (HTML, CSS, JS).
+- `.env`: Database credentials (sejajar dengan `pom.xml`).
+- `docs`: Dokumentasi dan screenshot.
+
 ---
 **Catatan:** Proyek ini dikerjakan untuk memenuhi evaluasi Tugas CRUD KTP.
 
