@@ -8,6 +8,9 @@
     --bg-light: #f8f9fa;
     --text-dark: #333;
     --border-color: #dee2e6;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --border-radius: 8px;
+    --border-radius-sm: 4px;
 }
 
 * {
