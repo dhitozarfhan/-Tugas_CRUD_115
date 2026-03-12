@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Pendataan KTP</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Google Fonts: Inter & Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Aplikasi Data KTP</h1>
+        <p>Pendataan KTP Berbasis Spring Boot REST API & Ajax JQuery</p>
+    </header>
+
+    <div class="alert-box" id="alertBox">
+        <span id="alertMessage"></span>
+        <button onclick="closeAlert()">&times;</button>
+    </div>
+
+    <div class="card form-section">
+        <h2 id="formTitle">Tambah Data KTP</h2>
+        <form id="ktpForm">
+            <input type="hidden" id="id" name="id">
+
+            <div class="form-group">
+                <label for="nomorKtp">Nomor KTP</label>
+                <input type="text" id="nomorKtp" name="nomorKtp" placeholder="Masukkan Nomor KTP (16 Digit)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="namaLengkap">Nama Lengkap</label>
+                <input type="text" id="namaLengkap" name="namaLengkap" placeholder="Masukkan Nama Lengkap" required>
+            </div>
+
+            <div class="form-group">
+                <label for="alamat">Alamat</label>
+                <textarea id="alamat" name="alamat" placeholder="Masukkan Alamat Lengkap" required rows="3"></textarea>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="tanggalLahir">Tanggal Lahir</label>
+                    <input type="date" id="tanggalLahir" name="tanggalLahir" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="jenisKelamin">Jenis Kelamin</label>
+                    <select id="jenisKelamin" name="jenisKelamin" required>
+                        <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                        <option value="Laki-Laki">Laki-Laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="btnSubmit">Simpan KTP</button>
+                <button type="button" class="btn btn-secondary" id="btnCancel" style="display:none;" onclick="resetForm()">Batal</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="card table-section">
+        <div class="table-header">
+            <h2>Daftar KTP</h2>
+            <button class="btn btn-sm btn-icon" onclick="fetchKtpData()">&#8635; Refresh Data</button>
+        </div>
+        <div class="table-responsive">
+            <table id="ktpTable">
+                <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nomor KTP</th>
+                    <th>Nama Lengkap</th>
+                    <th>Alamat</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Jenis Kelamin</th>
+                    <th class="text-center">Aksi</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Data akan di-load melalui Ajax di sini -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
