@@ -9,6 +9,9 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
+/**
+ * Data Transfer Object for KTP data.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
