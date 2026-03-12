@@ -3,6 +3,11 @@ const API_URL = '/api/ktp';
 let isEditing = false;
 
 // Format tanggal dari YYYY-MM-DD menjadi DD-MM-YYYY untuk display
+/**
+ * Format a date string into a localized Indonesian display format.
+ * @param {string} dateString - The date string from the API (YYYY-MM-DD).
+ * @returns {string} The localized date string.
+ */
 function formatDateForDisplay(dateString) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('id-ID', options);
@@ -20,6 +25,9 @@ $(document).ready(function () {
 });
 
 // GET: Mengambil seluruh data KTP
+/**
+ * Fetch all KTP data from the REST API and render the table.
+ */
 function fetchKtpData() {
     $.ajax({
         url: API_URL,
@@ -33,6 +41,10 @@ function fetchKtpData() {
     });
 }
 
+/**
+ * Render the KTP data array into the HTML table body.
+ * @param {Array} data - Array of KTP objects.
+ */
 function renderTable(data) {
     const tbody = $('#ktpTable tbody');
     tbody.empty();
@@ -62,6 +74,9 @@ function renderTable(data) {
 }
 
 // POST & PUT: Menyimpan atau update data
+/**
+ * Save current form data to the API (handles both Create and Update).
+ */
 function saveKtpData() {
     const id = $('#id').val();
     const dataKtp = {
