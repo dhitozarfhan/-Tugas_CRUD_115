@@ -143,6 +143,7 @@ function resetForm() {
     $('#btnCancel').hide();
     $('#ktpForm')[0].reset();
     $('#id').val('');
+    closeAlert();
 }
 
 // ALERT UTILS
