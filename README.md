@@ -1,6 +1,12 @@
 # Tugas_CRUD_NIM
 
-Aplikasi CRUD untuk data KTP dibangun menggunakan **Spring Boot (REST API)** di sisi backend dan **HTML, CSS, JQuery (Ajax)** di sisi frontend.
+Aplikasi CRUD untuk data KTP dibangun menggunakan **Spring Boot (REST API)** di sisi backend dan **HTML, CSS, JQuery (Ajax)** di sisi frontend. Proyek ini mendemonstrasikan integrasi antara Java backend dengan interface web modern yang responsif.
+
+## Fitur Utama
+- **CRUD Operations**: Create, Read, Update, dan Delete data KTP.
+- **Real-time API**: Komunikasi Ajax yang cepat tanpa reload halaman.
+- **Input Validation**: Validasi data baik di sisi client maupun server.
+- **Responsive Design**: Antarmuka yang optimal di berbagai ukuran layar.
 
 ## Persyaratan Sistem
 - Java 17
