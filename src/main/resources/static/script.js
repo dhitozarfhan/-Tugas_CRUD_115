@@ -55,22 +55,31 @@ function renderTable(data) {
     }
 
     data.forEach(function (ktp, index) {
-        const tr = `
-            <tr>
-                <td>${index + 1}</td>
-                <td class="nomor-ktp"><strong>${ktp.nomorKtp}</strong></td>
-                <td>${ktp.namaLengkap}</td>
-                <td>${ktp.alamat}</td>
-                <td>${formatDateForDisplay(ktp.tanggalLahir)}</td>
-                <td>${ktp.jenisKelamin}</td>
-                <td class="text-center action-buttons">
-                    <button class="btn btn-sm btn-secondary" onclick='editKtp(${JSON.stringify(ktp)})'>Edit</button>
-                    <button class="btn btn-sm btn-danger" onclick="deleteKtp(${ktp.id})">Hapus</button>
-                </td>
-            </tr>
-        `;
-        tbody.append(tr);
+        tbody.append(createTableRow(ktp, index));
     });
+}
+
+/**
+ * Create a table row HTML string for a KTP object.
+ * @param {Object} ktp - The KTP object.
+ * @param {number} index - The row index.
+ * @returns {string} The HTML string for the table row.
+ */
+function createTableRow(ktp, index) {
+    return `
+        <tr>
+            <td>${index + 1}</td>
+            <td class="nomor-ktp"><strong>${ktp.nomorKtp}</strong></td>
+            <td>${ktp.namaLengkap}</td>
+            <td>${ktp.alamat}</td>
+            <td>${formatDateForDisplay(ktp.tanggalLahir)}</td>
+            <td>${ktp.jenisKelamin}</td>
+            <td class="text-center action-buttons">
+                <button class="btn btn-sm btn-secondary" onclick='editKtp(${JSON.stringify(ktp)})'>Edit</button>
+                <button class="btn btn-sm btn-danger" onclick="deleteKtp(${ktp.id})">Hapus</button>
+            </td>
+        </tr>
+    `;
 }
 
 // POST & PUT: Menyimpan atau update data
